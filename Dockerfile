@@ -10,9 +10,6 @@ COPY requirements.txt .
 # install libraries
 RUN pip3 install --no-cache-dir -r requirements.txt
 
-# allows to delete ouput files
-USER developer 
-
 # ignores warnings form Keras/TesnorFlow
 ENV TF_CPP_MIN_LOG_LEVEL=2
 
