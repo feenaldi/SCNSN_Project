@@ -1,4 +1,4 @@
-# SCNSN_Project
+# Title
 Performance Comparison of SGD, XGBoost, and Deep Neural Networks on the dataset of the Higgs Boson Machine Learning Challenge
 
 # Content
