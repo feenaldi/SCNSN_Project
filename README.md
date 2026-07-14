@@ -27,12 +27,12 @@ in the Dockerfile.
 
 # Content of the Git Repository
 The Git repository contains the following files:
-    - the `Higgs.py` script, which contains the source code and is executed by the container;
-    - the `Higgs.ipynb` notebook, which provides a visual representation of the script;
-    - the dataset `training.csv`, which is accessed by the `Higgs.py` script when executed;
-    - the `Dockerfile`, which contains the instructions to build the container;
-    - the `requirements.txt` file, which contains the depdendencies of the project and is used to build the container;
-    - the `.gitignore` file, which was used ignore the virtual environment in which the libraries were installed.
+    * Item 1 the `Higgs.py` script, which contains the source code and is executed by the container;
+    * Item 2 the `Higgs.ipynb` notebook, which provides a visual representation of the script;
+    * Item 3 the dataset `training.csv`, which is accessed by the `Higgs.py` script when executed;
+    * Item 4 the `Dockerfile`, which contains the instructions to build the container;
+    * Item 5 the `requirements.txt` file, which contains the depdendencies of the project and is used to build the container;
+    * Item 6 the `.gitignore` file, which was used ignore the virtual environment in which the libraries were installed.
 
 ## Note on Dataset and Terms of Use
 To streamline the evaluation process and ensure immediate reproducibility of the code—without requiring the examiners to register for the Kaggle competition—the dataset files have been directly included in this repository.
