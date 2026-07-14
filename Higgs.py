@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # coding: utf-8
 
 # In[ ]:
@@ -483,7 +482,7 @@ df_mi = pd.DataFrame({
 }).sort_values(by='MI_Score', ascending=False)
 
 print("in order:\n")
-print(df_mi.head(10))
+print(df_mi)
 
 #top k feature selection
 non_linear_selector = SelectKBest(score_func=mutual_info_classif, k=10)
@@ -602,7 +601,7 @@ results_1 = [sgd_metrics, xgb_metrics, dnn_metrics]
 df_1 = pd.DataFrame(results_1, index=["SGDC", "XGBoost", "DNN"]).T
 
 df_1.to_csv(f"{SCRIPT_DIR}/output/results/benchmark_ML.csv")
-print("File 'benchmark_ML.csv' salvato con successo!")
+print("File 'benchmark_ML.csv' successfully saved!")
 
 
 # In[ ]:
@@ -613,5 +612,5 @@ results_2 = [xgb_metrics, xgb_metrics_1, xgb_metrics_2, xgb_tuned_metric]
 df_2 = pd.DataFrame(results_2, index=["Model 0", "Model 1", "Model 2", "Model 3"]).T
 
 df_2.to_csv(f"{SCRIPT_DIR}/output/results/benchmark_XGB.csv")
-print("File 'benchmark_XGB.csv' salvato con successo!")
+print("File 'benchmark_XGB.csv' succesfully saved!")
 
