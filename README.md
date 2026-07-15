@@ -14,10 +14,15 @@ docker pull feenaldi/scnsn_project:latest
 In order to execute the program, the content of the git repository must be downloaded and mounted during the execution of the container. To run the container, the following command can be used:
 
 ```js
-docker run --user $(id -u):$(id -g) -v PATH_TO_REPO:/home/docker <image_id>
+docker run --user $(id -u):$(id -g) -v PATH_TO_REPO_CONTENT:/home/docker <image_id>
 ```
 
-where the option `--user $(id -u):$(id -g)` ensures that the output files are owned by the current user; the option `-v $PWD:/home/docker` mounts the volume of the current working directory into the container, so that python script Higgs.py and the dataset training.csv can be accessed; finally, `<image_id>` must be replaced with the image identifier. Note that `PATH_TO_REPO` must be replaced with the path to the content of the repository.
+where the option `--user $(id -u):$(id -g)` ensures that the output files are owned by the current user; the option `-v $PWD:/home/docker` mounts the volume of the current working directory into the container, so that python script Higgs.py and the dataset training.csv can be accessed; finally, `<image_id>` must be replaced with the image identifier. Note that `PATH_TO_REPO_CONTENT` must be replaced with the path to the content of the repository. For example, if the container is run from the root directory of the cloned repository, the following command can be used:
+
+```js
+docker run --user $(id -u):$(id -g) -v $PWD:/home/docker <image_id>
+```
+
 
 As soon as the container is run, the `Higgs.py` script is executed thanks to the following instruction: 
 ```js 
@@ -33,6 +38,7 @@ The Git repository contains the following files:
 * the dataset `training.csv`, which is accessed by the `Higgs.py` script when executed;
 * the `Dockerfile`, which contains the instructions to build the container;
 * the `requirements.txt` file, which contains the dependencies of the project and is used to build the container;
+* the `.dockignore` file, which contains a list of the files that can be excluded from the Docker Build context, speeding up the process;
 * the `.gitignore` file, which was used to ignore the virtual environment in which the libraries were installed.
 
 ## Note on Dataset and Terms of Use
