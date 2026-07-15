@@ -1,5 +1,5 @@
 # build image on python
-FROM docker.io/python:3.11-slim
+FROM docker.io/python:3.13-slim
 
 # set working directory
 WORKDIR /home/docker

@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # coding: utf-8
 
 # In[ ]:
@@ -482,7 +483,7 @@ df_mi = pd.DataFrame({
 }).sort_values(by='MI_Score', ascending=False)
 
 print("in order:\n")
-print(df_mi)
+print(df_mi.head(10))
 
 #top k feature selection
 non_linear_selector = SelectKBest(score_func=mutual_info_classif, k=10)
@@ -573,11 +574,15 @@ xgb_tuned = xgb.XGBClassifier(
 
 # In[38]:
 
-
+start_time_7 = time.time()
 xgb_tuned.fit(
     X_tr,
     y_train
 )
+end_time_7 = time.time()
+training_time_7 = end_time_7 - start_time_7
+
+print(f"Model 3: {training_time_7}\n")
 
 
 # In[39]:
@@ -612,5 +617,5 @@ results_2 = [xgb_metrics, xgb_metrics_1, xgb_metrics_2, xgb_tuned_metric]
 df_2 = pd.DataFrame(results_2, index=["Model 0", "Model 1", "Model 2", "Model 3"]).T
 
 df_2.to_csv(f"{SCRIPT_DIR}/output/results/benchmark_XGB.csv")
-print("File 'benchmark_XGB.csv' succesfully saved!")
+print("File 'benchmark_XGB.csv' successfully saved!")
 
